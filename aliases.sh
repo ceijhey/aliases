@@ -32,5 +32,4 @@ alias ydl='youtube-dl -x --embed-thumbnail --add-metadata --audio-format mp3 -o 
 alias ftp_on='doas systemctl start pure-ftpd;doas systemctl start ddclient'
 alias ftp_off='doas systemctl stop pure-ftpd;doas systemctl stop ddclient'
 
-alias sudo='doas'
 alias mb_bios='systemctl reboot --firmware-setup'
