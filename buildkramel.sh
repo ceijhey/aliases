@@ -11,6 +11,7 @@ KERN_IMG=$KERNEL_DIR/out/arch/arm64/boot/Image.gz
 JASON_NONTREBLE_IMG=$KERNEL_DIR/out/arch/arm64/boot/dts/qcom/sdm660-mtp-jason.dtb
 JASON_TREBLE_IMG=$KERNEL_DIR/out/arch/arm64/boot/dts/qcom/sdm660-mtp-jason-treble.dtb
 WHYRED_TREBLE_IMG=$KERNEL_DIR/out/arch/arm64/boot/dts/qcom/sdm636-mtp-whyred.dtb
+LAVENDER_TREBLE_IMG=$KERNEL_DIR/out/arch/arm64/boot/dts/qcom/sdm660-mtp-lavender.dtb
 
 CROSS_COMPILE_PATH=${HOME}/androidProjects/prebuilts/arm64-gcc/bin/aarch64-elf-
 CROSS_COMPILE32_PATH=${HOME}/androidProjects/prebuilts/arm-eabi-gcc/bin/arm-eabi-
@@ -113,6 +114,7 @@ echo -e "***********************************************"
 
    # Move the zImage to AnyKernel2 dir
    cp -vr ${KERN_IMG} ${ANYKERNEL_DIR}/kernel/Image.gz
+   cp -vr ${LAVENDER_TREBLE_IMG} ${ANYKERNEL_DIR}/treble/sdm660-mtp-lavender.dtb
    cp -vr ${WHYRED_TREBLE_IMG} ${ANYKERNEL_DIR}/treble/sdm636-mtp-whyred.dtb
    cp -vr ${JASON_TREBLE_IMG} ${ANYKERNEL_DIR}/treble/sdm660-mtp-jason.dtb
    cp -vr ${JASON_NONTREBLE_IMG} ${ANYKERNEL_DIR}/nontreble/sdm660-mtp-jason.dtb
