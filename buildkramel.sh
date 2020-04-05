@@ -1,7 +1,9 @@
 
+add_date=${4:-no}
 build_type=${3:-alpha}
 lto=${2:-no}
 make_clean=${1:-clean}
+
 version=$BUILDKERNEL_VERSION
 # Kernel
 KERNEL_DIR=$PWD
@@ -38,24 +40,22 @@ fi
 
 if [[ $build_type == "alpha" ]]; then
   ZIP_NAME+="alpha-"
-  ZIP_NAME+="v$version-"
-  DASH_DATE=`echo $(date +'%d/%m/%Y/%H%M') | sed 's/\//-/g'`
-  ZIP_NAME+=$DASH_DATE
-
+  ZIP_NAME+="v$version"
 fi
 
 if [[ $build_type == "beta" ]]; then
   ZIP_NAME+="beta-"
-  ZIP_NAME+="v$version-"
-  DASH_DATE=`echo $(date +'%d/%m/%Y/%H%M') | sed 's/\//-/g'`
-  ZIP_NAME+=$DASH_DATE
+  ZIP_NAME+="v$version"
 fi
 
 if [[ $build_type == "rc" ]]; then
   ZIP_NAME+="stable-rc-"
-  ZIP_NAME+="v$version-"
+  ZIP_NAME+="v$version"
+fi
+
+if [[ $add_date == "yes" ]]; then
   DASH_DATE=`echo $(date +'%d/%m/%Y/%H%M') | sed 's/\//-/g'`
-  ZIP_NAME+=$DASH_DATE
+  ZIP_NAME+="-$DASH_DATE"
 fi
 
 # Set User and Host
