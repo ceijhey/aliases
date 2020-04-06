@@ -27,6 +27,8 @@ alias la='ls -a'
 alias lla='ls -la'
 alias lt='ls --tree'
 
+alias nano='micro'
+
 alias ydl='youtube-dl -x --embed-thumbnail --add-metadata --audio-format mp3 -o "%(title)s.%(ext)s"'
 
 alias ftp_on='doas systemctl start pure-ftpd;doas systemctl start ddclient'
