@@ -107,6 +107,10 @@ make -j$(nproc --all) O=out \
                       CROSS_COMPILE_ARM32=${CROSS_COMPILE32_PATH} \
                       CROSS_COMPILE=${CROSS_COMPILE_PATH}
 
+# If the above was successful
+if [ -a $KERN_IMG ]; then
+   BUILD_RESULT_STRING="BUILD SUCCESSFUL"
+
 echo -e "***********************************************"
 echo    "            Making Flashable Zip               "
 echo -e "***********************************************"
@@ -143,6 +147,10 @@ echo $ZIP_EXPORT_LOCATION
 echo -e "\n------------------------------"
 
 echo ""
+
+else
+   BUILD_RESULT_STRING="BUILD FAILED"
+fi
 
 # End the script
 echo "${BUILD_RESULT_STRING}!"
