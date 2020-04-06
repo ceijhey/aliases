@@ -104,7 +104,7 @@ echo -e "***********************************************"
 # make
 make -j$(nproc --all) O=out \
                       ARCH=arm64 \
-					  CROSS_COMPILE_ARM32=${CROSS_COMPILE32_PATH} \
+                      CROSS_COMPILE_ARM32=${CROSS_COMPILE32_PATH} \
                       CROSS_COMPILE=${CROSS_COMPILE_PATH}
 
 echo -e "***********************************************"
