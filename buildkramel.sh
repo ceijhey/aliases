@@ -130,22 +130,16 @@ echo -e "***********************************************"
    zip -r9 ${ZIP_NAME}.zip * -x README ${ZIP_NAME}.zip
 
 # Export Zip
-NOW=$(date +"%m-%d")
 ZIP_LOCATION=${ANYKERNEL_DIR}/${ZIP_NAME}.zip
-ZIP_EXPORT=${EXPORT_DIR}/${NOW}
-ZIP_EXPORT_LOCATION=${EXPORT_DIR}/${NOW}/${ZIP_NAME}.zip
+ZIP_EXPORT_LOCATION=${EXPORT_DIR}/${ZIP_NAME}.zip
 
-rm -rf ${ZIP_EXPORT}
-mkdir ${ZIP_EXPORT}
-mv ${ZIP_LOCATION} ${ZIP_EXPORT}
+mv ${ZIP_LOCATION} ${EXPORT_DIR}
 cd ${KERNEL_DIR}
 
 echo ""
-
-echo "------------------------------"
+echo -e "\n------------------------------"
 echo $ZIP_EXPORT_LOCATION
 echo -e "\n------------------------------"
-
 echo ""
 
 else
