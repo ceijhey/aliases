@@ -7,4 +7,4 @@ export ALIASES_ABS_PATH=${absolute_path}
 source $absolute_path/aliases.sh 2>>/dev/null
 source $absolute_path/functions.sh 2>>/dev/null
 
-export VISUAL=nano
+export VISUAL=micro
