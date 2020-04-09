@@ -14,6 +14,7 @@ JASON_NONTREBLE_IMG=$KERNEL_DIR/out/arch/arm64/boot/dts/qcom/sdm660-mtp-jason.dt
 JASON_TREBLE_IMG=$KERNEL_DIR/out/arch/arm64/boot/dts/qcom/sdm660-mtp-jason-treble.dtb
 WHYRED_TREBLE_IMG=$KERNEL_DIR/out/arch/arm64/boot/dts/qcom/sdm636-mtp-whyred.dtb
 LAVENDER_TREBLE_IMG=$KERNEL_DIR/out/arch/arm64/boot/dts/qcom/sdm660-mtp-lavender.dtb
+LAVENDER_OLDLED_TREBLE_IMG=$KERNEL_DIR/out/arch/arm64/boot/dts/qcom/sdm660-mtp-lavender-old-led.dtb
 WAYNE_TREBLE_IMG=$KERNEL_DIR/out/arch/arm64/boot/dts/qcom/sdm660-mtp-wayne.dtb
 JASMINE_TREBLE_IMG=$KERNEL_DIR/out/arch/arm64/boot/dts/qcom/sdm660-mtp-jasmine.dtb
 
@@ -108,7 +109,9 @@ make -j$(nproc --all) O=out \
                       CROSS_COMPILE=${CROSS_COMPILE_PATH}
 
 # If the above was successful
-if [ -a $KERN_IMG ]; then
+if [[ -a $KERN_IMG ]]; then
+   source $ALIASES_ABS_PATH/beep.sh
+
    BUILD_RESULT_STRING="BUILD SUCCESSFUL"
 
 echo -e "***********************************************"
@@ -121,6 +124,7 @@ echo -e "***********************************************"
    # Move the zImage to AnyKernel2 dir
    cp -vr ${KERN_IMG} ${ANYKERNEL_DIR}/kernel/Image.gz
    cp -vr ${LAVENDER_TREBLE_IMG} ${ANYKERNEL_DIR}/treble/sdm660-mtp-lavender.dtb
+   cp -vr ${LAVENDER_OLDLED_TREBLE_IMG} ${ANYKERNEL_DIR}/treble/sdm660-mtp-lavender-old-led.dtb
    cp -vr ${WAYNE_TREBLE_IMG} ${ANYKERNEL_DIR}/treble/sdm660-mtp-wayne.dtb
    cp -vr ${JASMINE_TREBLE_IMG} ${ANYKERNEL_DIR}/treble/sdm660-mtp-jasmine.dtb
    cp -vr ${WHYRED_TREBLE_IMG} ${ANYKERNEL_DIR}/treble/sdm636-mtp-whyred.dtb
