@@ -22,6 +22,8 @@ CROSS_COMPILE_PATH=${HOME}/androidProjects/prebuilts/arm64-gcc/bin/aarch64-elf-
 CROSS_COMPILE32_PATH=${HOME}/androidProjects/prebuilts/arm-eabi-gcc/bin/arm-eabi-
 export KERNEL_USE_CCACHE=1
 
+export PATH="$HOME/androidProjects/prebuilts/proton-clang/bin:$PATH"
+
 # Build Start [needed for calculating time]
 BUILD_START=$(date +"%s")
 
@@ -103,10 +105,29 @@ echo    "          Cooking Kernel                       "
 echo -e "***********************************************"
 
 # make
-make -j$(nproc --all) O=out \
-                      ARCH=arm64 \
-                      CROSS_COMPILE_ARM32=${CROSS_COMPILE32_PATH} \
-                      CROSS_COMPILE=${CROSS_COMPILE_PATH}
+echo -e "\n***********************************************"
+if [ -z "$BUILDKERNEL_CLANG" ]; then
+    echo -e "            Building with GCC                  "
+else
+    echo -e "            Building with Clang                "
+fi
+echo -e "***********************************************"
+
+if [ -z "$BUILDKERNEL_CLANG" ]; then
+    make -j$(nproc --all) O=out \
+                          ARCH=arm64 \
+                          CROSS_COMPILE_ARM32=${CROSS_COMPILE32_PATH} \
+                          CROSS_COMPILE=${CROSS_COMPILE_PATH}
+else
+    make -j$(nproc --all) O=out \
+                          ARCH=arm64 \
+                          CC=clang \
+                          CROSS_COMPILE=aarch64-linux-gnu- \
+                          CROSS_COMPILE_ARM32=arm-linux-gnueabi-
+fi
+
+
+
 
 # If the above was successful
 if [[ -a $KERN_IMG ]]; then
