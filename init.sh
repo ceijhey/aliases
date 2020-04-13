@@ -8,3 +8,4 @@ source $absolute_path/aliases.sh 2>>/dev/null
 source $absolute_path/functions.sh 2>>/dev/null
 
 export VISUAL=micro
+export EDITOR=micro
