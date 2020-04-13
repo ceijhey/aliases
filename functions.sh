@@ -78,16 +78,16 @@ esac
 
 function abort() {
 case $1 in
-    c)
+    c*)
     git cherry-pick --abort
     ;;
-    r)
+    r*)
     git revert --abort
     ;;
-    m)
+    m*)
     git merge --abort
     ;;
-    am|a)
+    a*)
     git am --abort
     ;;
     *)
