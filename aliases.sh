@@ -13,8 +13,6 @@ alias add.='git add .'
 alias cond='git cherry-pick --continue'
 alias rsg='git reset'
 alias pick='git cherry-pick -s'
-alias gitcred='git_cred'
-alias gitconf='git_config'
 alias skip='git cherry-pick --skip'
 
 alias gus='gdrive upload --share'

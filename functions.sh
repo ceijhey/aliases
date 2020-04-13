@@ -116,12 +116,12 @@ function buildkramel() {
 source $ALIASES_ABS_PATH/buildkramel.sh
 }
 
-function git_cred() {
+function user_gitcred() {
 git config user.email "dusan.uveric9@gmail.com"
 git config user.name "Dušan Uverić"
 }
 
-function git_config() {
+function user_gitconfig() {
 git config credential.helper store
 git config --global credential.helper "cache --timeout 360000"
 }
