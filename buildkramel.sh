@@ -17,6 +17,7 @@ LAVENDER_TREBLE_IMG=$KERNEL_DIR/out/arch/arm64/boot/dts/qcom/sdm660-mtp-lavender
 LAVENDER_OLDLED_TREBLE_IMG=$KERNEL_DIR/out/arch/arm64/boot/dts/qcom/sdm660-mtp-lavender-old-led.dtb
 WAYNE_TREBLE_IMG=$KERNEL_DIR/out/arch/arm64/boot/dts/qcom/sdm660-mtp-wayne.dtb
 JASMINE_TREBLE_IMG=$KERNEL_DIR/out/arch/arm64/boot/dts/qcom/sdm660-mtp-jasmine.dtb
+CLOVER_TREBLE_IMG=$KERNEL_DIR/out/arch/arm64/boot/dts/qcom/sdm660-mtp-clover.dtb
 
 CROSS_COMPILE_PATH=${HOME}/androidProjects/prebuilts/arm64-gcc/bin/aarch64-elf-
 CROSS_COMPILE32_PATH=${HOME}/androidProjects/prebuilts/arm-eabi-gcc/bin/arm-eabi-
@@ -151,6 +152,7 @@ echo -e "***********************************************"
    cp -vr ${WHYRED_TREBLE_IMG} ${ANYKERNEL_DIR}/treble/sdm636-mtp-whyred.dtb
    cp -vr ${JASON_TREBLE_IMG} ${ANYKERNEL_DIR}/treble/sdm660-mtp-jason.dtb
    cp -vr ${JASON_NONTREBLE_IMG} ${ANYKERNEL_DIR}/nontreble/sdm660-mtp-jason.dtb
+   cp -vr ${CLOVER_TREBLE_IMG} ${ANYKERNEL_DIR}/treble/sdm660-mtp-clover.dtb
    cd ${ANYKERNEL_DIR}
    zip -r9 ${ZIP_NAME}.zip * -x README ${ZIP_NAME}.zip
 
