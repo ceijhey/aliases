@@ -1,19 +1,6 @@
 #!/bin/bash
 
-alias romd='cd ${HP}/${ROM}'
-alias dtd='cd ${HP}/${ROM}/device/xiaomi/jason'
-alias kd='cd ${HP}/${ROM}/kernel/xiaomi/jason'
-alias vnd='cd ${HP}/${ROM}/vendor/xiaomi/jason'
-alias home='cd ${HP}'
-
 alias cls='clear;clear;clear'
-
-alias logg='git log --pretty=short'
-alias add.='git add .'
-alias cond='git cherry-pick --continue'
-alias rsg='git reset'
-alias pick='git cherry-pick -s'
-alias skip='git cherry-pick --skip'
 
 alias gus='gdrive upload --share'
 
