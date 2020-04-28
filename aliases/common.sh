@@ -20,3 +20,6 @@ alias ftp_on='doas systemctl start pure-ftpd;doas systemctl start ddclient'
 alias ftp_off='doas systemctl stop pure-ftpd;doas systemctl stop ddclient'
 
 alias mb_bios='systemctl reboot --firmware-setup'
+
+alias icat="kitty +kitten icat"
+alias d="kitty +kitten diff"
