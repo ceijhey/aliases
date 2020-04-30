@@ -10,5 +10,9 @@ source $absolute_path/functions/rom.sh 2>>/dev/null
 source $absolute_path/functions/git.sh 2>>/dev/null
 source $absolute_path/functions/common.sh 2>>/dev/null
 
+
 export VISUAL=micro
 export EDITOR=micro
+
+setxkbmap -option caps:escape
+
