@@ -6,9 +6,7 @@ export ALIASES_ABS_PATH=${absolute_path}
 
 source $absolute_path/aliases/init.sh 2>>/dev/null
 
-source $absolute_path/functions/rom.sh 2>>/dev/null
-source $absolute_path/functions/git.sh 2>>/dev/null
-source $absolute_path/functions/common.sh 2>>/dev/null
+source $absolute_path/functions/init.sh 2>>/dev/null
 
 
 export VISUAL=micro
