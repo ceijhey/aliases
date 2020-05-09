@@ -23,3 +23,5 @@ alias mb_bios='systemctl reboot --firmware-setup'
 
 alias icat="kitty +kitten icat"
 alias d="kitty +kitten diff"
+
+alias yayy="PKGEXT=.pkg.tar yay"
