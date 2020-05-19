@@ -11,6 +11,3 @@ source $absolute_path/functions/init.sh 2>>/dev/null
 
 export VISUAL=micro
 export EDITOR=micro
-
-setxkbmap -option caps:escape
-
