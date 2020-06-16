@@ -35,7 +35,7 @@ git config --global credential.helper "cache --timeout 360000"
 }
 
 function git() {
-    if [[ $@ == "log" ]] || [[ $@ == "show" ]] || [[ $@ == "blame" ]] then
+    if [[ $@ == *"log"* ]] || [[ $@ == *"show"* ]] || [[ $@ == *"blame"* ]] then
         command tig "$@"
     else
         command git "$@"
