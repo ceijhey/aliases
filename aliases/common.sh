@@ -6,7 +6,10 @@ alias gus='gdrive upload --share'
 
 alias alias_reinit='source ${ALIASES_ABS_PATH}/init.sh'
 
-alias ls='lsd'
+if [[ "$(where lsd)" != *"not"* ]] then
+    alias ls='lsd'
+fi
+
 alias l='ls -l'
 alias la='ls -a'
 alias lla='ls -la'
