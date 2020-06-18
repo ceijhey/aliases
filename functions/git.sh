@@ -33,13 +33,3 @@ function user_gitconfig() {
 git config credential.helper store
 git config --global credential.helper "cache --timeout 360000"
 }
-
-function git_with_tig() {
-    if [[ $@ == *"log"* ]] || [[ $@ == *"show"* ]] || [[ $@ == *"blame"* ]] then
-        command tig "$@"
-    elif [[ $@ == *"diff"* ]] then
-        command git "$@" | tig
-    else
-        command git "$@"
-    fi
-}
